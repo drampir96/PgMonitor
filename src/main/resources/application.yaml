@@ -1,0 +1,18 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${host}:${port},${host}:${port}/${db_name}?targetServerType=master&prepareThreshold=0
+    username: ${username}
+    password: ${password}
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 1
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    open-in-view: true
+
+config:
+  additional-location: ./*
